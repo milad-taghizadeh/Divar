@@ -1,6 +1,6 @@
 {
   "name": "divar",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "divar backend",
   "main": "index.js",
   "scripts": {
