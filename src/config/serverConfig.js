@@ -15,8 +15,6 @@ const cookieParser = require('cookie-parser')
 // middleware
 const morgan = require('morgan');
 
-// routers imports
-const testRouter = require('./../routes/test');
 
 module.exports = function (app) {
     // use middleware : morgan
@@ -32,5 +30,5 @@ module.exports = function (app) {
     app.use(bodyParser.urlencoded({ extended: true }));
 
     // set the reoutes
-    app.use('/api',testRouter)
+
 }

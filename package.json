@@ -1,7 +1,7 @@
 {
-  "name": "node-test",
+  "name": "divar",
   "version": "0.0.1",
-  "description": "This is test project",
+  "description": "divar backend",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",

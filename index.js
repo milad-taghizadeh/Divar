@@ -3,12 +3,14 @@ const express = require('express');
 const app = express();
 
 // Server config
-require('./config/serverConfig')(app)
+require('./src/config/serverConfig')(app)
 
 // DataBase config
-require('./config/mongooseConfig')
+require('./src/config/mongooseConfig')
 
-
+// swagger config
+const swaggerConfig = require('./src/config/swaggerConfig')
+swaggerConfig(app);
 
 // starting server
 app.listen(process.env.PORT, () => {
