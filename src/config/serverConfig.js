@@ -15,6 +15,16 @@ const cookieParser = require('cookie-parser')
 // middleware
 const morgan = require('morgan');
 
+// main router
+const mainRouter = require('../router');
+
+// swagger config
+const swaggerConfig = require('../config/swaggerConfig')
+
+// error handler
+const { NotFoundHandler } = require('../common/utils/notFoundHandler');
+const { ExceptionHandler } = require('../common/utils/exceptionHandler');
+
 
 module.exports = function (app) {
     // use middleware : morgan
@@ -29,6 +39,13 @@ module.exports = function (app) {
     // use Parse URL-encoded bodies
     app.use(bodyParser.urlencoded({ extended: true }));
 
-    // set the reoutes
+    // swagger config
+    swaggerConfig(app);
 
+    // error handler
+    NotFoundHandler(app)
+    ExceptionHandler(app)
+
+    // set the reoutes
+    app.use(mainRouter)
 }
