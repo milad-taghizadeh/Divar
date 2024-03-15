@@ -11,8 +11,9 @@ require('./src/config/mongooseConfig')
 
 // starting server
 app.listen(process.env.PORT, () => {
+    console.log("===== "+`${process.env.PROJ_NAME}`+ " Ver: "+ `${process.env.PROJ_VER}`+" =====");
     console.log(`Server is running on Port:${process.env.PORT}`);
-    console.log(`You can access to server on this address ==> http://localhost:${process.env.PORT}`);
+    console.log(`API documentation ==> http://localhost:${process.env.PORT}/api-doc`);
 }).on('error', (err) => {
     console.log(err);
     console.log('Backend server is NOT STARTED !!!');
