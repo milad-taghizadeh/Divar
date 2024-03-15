@@ -31,6 +31,16 @@ class AuthService {
     }
 
     async checkOTP(mobile, code) {
+        const user = await this.checkExistByMobile(mobile);
+        console.log('hi')
+        const now = new Date().getTime();
+        if (user?.otp?.expiresIn < now) throw new createHttpError.Unauthorized(AuthMessage.OtpCodeIsExpired)
+        if (user?.otp?.code !== code) throw new createHttpError.Unauthorized(AuthMessage.OtpCodeIsIncorrect)
+        if (!user.verifiedMobile) {
+            user.verifiedMobile = true;
+            await user.save();
+        }
+        return user;
 
     }
 
