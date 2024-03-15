@@ -4,4 +4,4 @@ const AuthMessage = {
     OtpCodeNotExpired: "OTP code is not expired !!! please try again later"
 }
 
-module.exports = { AuthMessage, NotFoundUser }
+module.exports = { AuthMessage }
