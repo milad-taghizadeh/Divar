@@ -65,3 +65,16 @@
  *         description: Success 
  */
 
+/**
+ * @swagger
+ * 
+ * /api/auth/logout:
+ *  get:
+ *      summary: User logout 
+ *      tags:
+ *          -   Auth
+ *      responses:  
+ *       200: 
+ *         description: Logged out successfully 
+ */
+
