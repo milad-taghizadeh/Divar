@@ -16,7 +16,7 @@ const cookieParser = require('cookie-parser')
 const morgan = require('morgan');
 
 // main router
-const mainRouter = require('../router');
+const { mainRouter } = require('../router');
 
 // swagger config
 const swaggerConfig = require('../config/swaggerConfig')
@@ -42,10 +42,10 @@ module.exports = function (app) {
     // swagger config
     swaggerConfig(app);
 
+    // set the reoutes
+    app.use('/api', mainRouter)
+
     // error handler
     NotFoundHandler(app)
     ExceptionHandler(app)
-
-    // set the reoutes
-    app.use(mainRouter)
 }

@@ -8,9 +8,6 @@ require('./src/config/serverConfig')(app)
 // DataBase config
 require('./src/config/mongooseConfig')
 
-// swagger config
-const swaggerConfig = require('./src/config/swaggerConfig')
-swaggerConfig(app);
 
 // starting server
 app.listen(process.env.PORT, () => {
