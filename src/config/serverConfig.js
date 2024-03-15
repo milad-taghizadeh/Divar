@@ -34,7 +34,7 @@ module.exports = function (app) {
     app.use(bodyParser.json());
 
     // use Parse cookies
-    app.use(cookieParser());
+    app.use(cookieParser(process.env.COOKIE_SECRET_KEY));
 
     // use Parse URL-encoded bodies
     app.use(bodyParser.urlencoded({ extended: true }));
