@@ -1,4 +1,4 @@
-const { Schema, Types } = require("mongoose");
+const { Schema, Types, model } = require("mongoose");
 
 const CategorySchema = new Schema({
     name: { type: String, required: true },
@@ -15,6 +15,6 @@ CategorySchema.virtual('children', {
     foreignField: "parent"
 });
 
-const CategoryModel = model("category", CategorySchema);
+const CategoryModel = model("Category", CategorySchema);
 
 module.exports = CategoryModel;
