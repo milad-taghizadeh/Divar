@@ -14,6 +14,12 @@ class CategoryService {
     async create(categoryDto) {
         if (categoryDto?.parent && isValidObjectId(categoryDto.parent)) {
             const existCategory = await this.checkExistById(categoryDto.parent)
+            categoryDto.parents = [
+                ...new Set (
+                    existCategory._id.toString(),
+                    
+                )
+            ]
         }
         const category = await this.#model.create(categoryDto);
         return category
